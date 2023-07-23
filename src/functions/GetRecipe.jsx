@@ -1,16 +1,18 @@
 import axios from 'axios';
 import React from "react";
 
-const GetRecipe = () => 
+//We have a function that will display the recipes depending on the selected country. 
+const GetRecipe = (selectedCountry) => 
 { 
   const [recipesData, setRecipesData] = React.useState([]);
 
+  //It will run every time selectedCountry changes
   React.useEffect(() => 
-  {
-    
+  {  
     const fetchData = async () => 
     {
-      const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=Spanish`);
+      
+      const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${selectedCountry}`);
 
       try
       {
@@ -26,7 +28,9 @@ const GetRecipe = () =>
 
     fetchData();
     
-  },[])
+  },[selectedCountry])
+
+
   return recipesData;
 }
 
