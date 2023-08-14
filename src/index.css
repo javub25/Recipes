@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/*Mobile Custom for each Recipe*/
+@media (max-width: 640px)
+{
+    .flex
+    {
+        flex-direction: column;
+    }
+    .flex > div{width:100%}
+}
