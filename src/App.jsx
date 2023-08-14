@@ -7,6 +7,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from "./components/HomePage.jsx";
 import RecipeDetails from "./components/RecipeDetails.jsx";
 
+//Let's change body color
+const body = document.getElementsByTagName("body")[0];
+body.classList.add("bg-slate-200");
+
+
 /*At this point, our app will have an initial component where the recipes will be displayed based on the user's choice of country, 
 all this will be inside the HomePage component.*/
 
@@ -14,8 +19,7 @@ all this will be inside the HomePage component.*/
 function App() {
   return (
     <>
-      <div className="App mx-auto">
-        {/*Component HomePage will render Country NavBar and receips regarding country chosen by user*/}
+      <div className="App mx-auto px-6">
         <Router>
           <Routes>
             <Route path="/" element={<HomePage/>} />
