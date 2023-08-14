@@ -35,7 +35,7 @@ const RecipeDetails = () =>
                 </div>
                 }
                 <div className="px-4 py-6 bottom-0 mx-auto w-full">
-                    <h2 className="text-center text-black font-bold text-slate-600">{RecipeDetails.StepByStep}</h2>
+                    <h2 className="text-black font-bold text-slate-600">{RecipeDetails.StepByStep}</h2>
                 </div>
             </div>
         </div>
