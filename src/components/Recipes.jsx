@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom/client";
 import React from "react";
 import 'animate.css';
-import GetRecipeInfo from "../functions/GetRecipeInfo";
+import { Link } from 'react-router-dom';
+
 
 /*Object that stores the two pictures we have of the hearts.*/
 let heartsImg = {
@@ -12,12 +13,12 @@ let heartsImg = {
 //By default the user will not have indicated that he/she has any favorite recipe.
 let heart = heartsImg.notfavorite;
 
+
 const Recipes = (props) => 
 {
-    //We get data about meals as tags, recipe tutorials from Youtube and a step-by-step report 
-    const RecipeInfo = GetRecipeInfo(props.idMeal);
-
     const [itemStatus, setitemStatus] = React.useState(false);
+
+
 
     const FavouriteItem = () => 
     {
@@ -30,28 +31,36 @@ const Recipes = (props) =>
         else heart = heartsImg.notfavorite;
     }
 
-
     return (
         <div className="shadow-xl w-4/5 mx-auto animate__animated animate__zoomIn relative">
             <div className="absolute right-3.5 my-8">
                 <img src={heart} onClick={FavouriteItem} alt="Favourite"/>
         
             </div>
-            <div className="px-4 pt-8">
+            <div className="px-4 py-8">
                 <img src={props.img} className="w-full rounded-lg"/>                
             </div>
-            
-            <div className="px-4 py-6 bottom-0 mx-auto w-full">
-                <h2 className="text-center text-black font-bold text-slate-600">{props.title}</h2>
-            </div>
-            <div className="px-4 py-6 bottom-0 mx-auto w-full">
-                <h2 className="text-center text-black font-bold text-slate-600">{RecipeInfo.Tags}</h2>
+            {/*With Link object we'll tell it that we want to pass each IdRecipe by Url when the user clicks More Details*/}
+            <div className="pb-8">
+                {/*to --> where Link has to go to send IdRecipe by Url
+                   search --> the action that will make idRecipe to be sent by the url. 
+                   To obtain the value we will access to recipeId
+                */}
+
+                <Link
+                    to={{
+                        pathname: '/recipe-details',
+                        search: `?recipeId=${props.idrecipe}`
+                    }}
+                    className="px-4 py-2 text-white bg-orange-400">
+                        More Details
+                </Link>
             </div>
 
-            <div className="px-4 py-6 bottom-0 mx-auto w-full">
-                <h2 className="text-center text-black font-bold text-slate-600">{RecipeInfo.StepByStep}</h2>
-            </div>
         </div>
     )
+
 }
 export default Recipes;
+
+
