@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import React from "react";
 import 'animate.css';
+import GetRecipeInfo from "../functions/GetRecipeInfo";
 
 /*Object that stores the two pictures we have of the hearts.*/
 let heartsImg = {
@@ -13,6 +14,8 @@ let heart = heartsImg.notfavorite;
 
 const Recipes = (props) => 
 {
+    //We get data about meals as tags, recipe tutorials from Youtube and a step-by-step report 
+    const RecipeInfo = GetRecipeInfo(props.idMeal);
 
     const [itemStatus, setitemStatus] = React.useState(false);
 
@@ -26,7 +29,8 @@ const Recipes = (props) =>
         //If it was in favorite will uncheck it.
         else heart = heartsImg.notfavorite;
     }
-    
+
+
     return (
         <div className="shadow-xl w-4/5 mx-auto animate__animated animate__zoomIn relative">
             <div className="absolute right-3.5 my-8">
@@ -39,6 +43,13 @@ const Recipes = (props) =>
             
             <div className="px-4 py-6 bottom-0 mx-auto w-full">
                 <h2 className="text-center text-black font-bold text-slate-600">{props.title}</h2>
+            </div>
+            <div className="px-4 py-6 bottom-0 mx-auto w-full">
+                <h2 className="text-center text-black font-bold text-slate-600">{RecipeInfo.Tags}</h2>
+            </div>
+
+            <div className="px-4 py-6 bottom-0 mx-auto w-full">
+                <h2 className="text-center text-black font-bold text-slate-600">{RecipeInfo.StepByStep}</h2>
             </div>
         </div>
     )
