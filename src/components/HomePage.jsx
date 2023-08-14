@@ -38,7 +38,7 @@ const HomePage = () =>
         {
           recipesData!==null &&
 
-          <div className="xl:w-4/5 grid sm:grid-cols-3 xl:grid-cols-5 gap-x-1 content-center mx-auto">
+          <div className="xl:w-4/5 grid sm:grid-cols-3 xl:grid-cols-5 gap-x-1 gap-y-8 content-center mx-auto">
         {recipesData.map((recipe => 
           {
            return (
