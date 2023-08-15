@@ -19,7 +19,7 @@ all this will be inside the HomePage component.*/
 function App() {
   return (
     <>
-      <div className="App mx-auto px-6">
+      <div className="App mx-auto px-6 py-8">
         <Router>
           <Routes>
             <Route path="/" element={<HomePage/>} />
