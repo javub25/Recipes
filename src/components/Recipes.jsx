@@ -32,7 +32,7 @@ const Recipes = (props) =>
     }
 
     return (
-        <div className="shadow-xl w-4/5 mx-auto animate__animated animate__zoomIn relative">
+        <div className="bg-white shadow-xl w-4/5 mx-auto animate__animated animate__zoomIn relative">
             <div className="absolute right-3.5 my-8">
                 <img src={heart} onClick={FavouriteItem} alt="Favourite"/>
         
@@ -62,5 +62,3 @@ const Recipes = (props) =>
 
 }
 export default Recipes;
-
-
