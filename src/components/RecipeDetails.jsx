@@ -15,18 +15,19 @@ const RecipeDetails = () =>
     //We get data about meals as tags, recipe tutorials from Youtube and a step-by-step report 
     const RecipeDetails = GetRecipeInfo(RecipeID);
     return (
-        <div className="flex w-full items-center mx-auto animate__animated animate__zoomIn">
-            <div className="w-1/4">
-                <div className="px-4 pt-8">
+        <div className="bg-white flex w-full items-center mx-auto animate__animated animate__zoomIn">
+            <div className="w-1/4 relative">
+                <div className="p-6">
                     <img src={RecipeDetails.Img} className="w-full rounded-lg"/>                
+                </div>
+                <div className="absolute bottom-0 mx-auto w-full p-6">
+                    <div className="py-2 bg-black rounded-b-lg">
+                        <h2 className="text-center text-black font-bold text-slate-600">{RecipeDetails.Title}</h2>
+                    </div>
                 </div>
             </div>
 
             <div className="w-3/4">
-                <div className="px-4 py-6 bottom-0 mx-auto w-full">
-                    <h2 className="text-center text-black font-bold text-slate-600">{RecipeDetails.Title}</h2>
-                </div>
-            
                 {/*Comment JSX: This only appear when there are tags*/}
                 {RecipeDetails.Tags !==null &&
             
