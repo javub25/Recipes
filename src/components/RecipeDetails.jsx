@@ -33,9 +33,8 @@ const RecipeDetails = () =>
             <div className="w-2/3">
                 {/*Comment JSX: This only appear when there are tags*/}
                 {RecipeDetails.Tags !==null &&
-            
-                <div className="px-4 py-6 bottom-0 mx-auto w-full">
-                    <h2 className="text-center text-black font-bold text-slate-600 break-words">{RecipeDetails.Tags}</h2>
+                <div className="w-48 p-2 bg-orange-400 my-5">
+                    <h2 className="text-center text-white font-bold text-slate-600 break-words text-sm">{RecipeDetails.Tags}</h2>
                 </div>
                 }
                 <div className="px-4 py-6 bottom-0 mx-auto w-full">
