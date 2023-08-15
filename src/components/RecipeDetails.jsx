@@ -17,7 +17,9 @@ const RecipeDetails = () =>
 
     return (
         <div className="bg-white flex w-full items-center mx-auto animate__animated animate__zoomIn">
-             <div className="w-1/4 relative">
+            {/*Div Img: Width:33%*/}
+
+             <div className="w-1/3 relative">
                 <div className="p-6">
                     <img src={RecipeDetails.Img} className="w-full rounded-lg"/>                
                 </div>
@@ -27,8 +29,8 @@ const RecipeDetails = () =>
                     </div>
                 </div>
             </div>
-
-            <div className="w-3/4">
+            {/*Div Info: Width:66%*/}
+            <div className="w-2/3">
                 {/*Comment JSX: This only appear when there are tags*/}
                 {RecipeDetails.Tags !==null &&
             
