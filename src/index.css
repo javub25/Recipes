@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /*Mobile Custom for each Recipe*/
+.ingredients
+{
+    display:flex;
+}
 @media (max-width: 640px)
 {
     .flex
