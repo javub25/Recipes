@@ -18,7 +18,7 @@ const RecipeDetails = () =>
 
     //Shows each ingredient with an identification number inside a teal background container. 
     const ShowIngredients = () => {
-        return (    
+        return (   
             RecipeDetails.Ingredients.map((ingredient, index) => {
                 return (
                     <div className="ingredients xl:w-1/3 pr-4 pb-4">
@@ -36,7 +36,8 @@ const RecipeDetails = () =>
     };
 
     return (
-        <div className="bg-white flex w-full items-center mx-auto animate__animated animate__zoomIn">
+        <section className="bg-white">
+            <div className="flex w-full items-center mx-auto animate__animated animate__zoomIn">
             
             {/*Div Img: Width:33%*/}
              <div className="w-1/3 relative">
@@ -45,7 +46,7 @@ const RecipeDetails = () =>
                 </div>
                 <div className="absolute bottom-0 mx-auto w-full p-6">
                     <div className="py-2 bg-black rounded-b-lg">
-                        <h2 className="text-center text-white font-bold">{RecipeDetails.Title}</h2>
+                        <h1 className="text-center text-white font-bold text-lg">{RecipeDetails.Title}</h1>
                     </div>
                 </div>
             </div>
@@ -64,11 +65,31 @@ const RecipeDetails = () =>
                 {RecipeDetails.Tags === null && <br/>} 
 
                 {/*Render the ShowIngredients component */}
-                <div className="ingredients flex-wrap items-center p-4 bg-orange-400">
-                    <ShowIngredients />
+                <div className="bg-orange-400 p-4">
+                    <h2 className="text-white font-bold">Ingredients</h2>
+
+                    <div className="ingredients flex-wrap items-center pt-4">
+                        <ShowIngredients />
+                    </div>
+                </div>                
+            </div>
+            </div>
+
+            {/*pt-14 : padding-top:48px / pb-16: padding-bottom:64px*/}
+            <div className="pt-14 pb-16">
+                <div className="bg-[url('./public/img/recipes-bg.jpg')] bg-cover bg-center bg-no-repeat bg-fixed h-96">
                 </div>
             </div>
-        </div>
+
+            {/*Instructions containers*/}
+            <div className="px-6">
+                <h1 className="text-3xl font-bold text-black text-center italic">How could I do it?</h1>
+                <br/>
+                <p>{RecipeDetails.StepByStep}
+                </p>
+            </div>
+
+        </section>
     )
 }
 
