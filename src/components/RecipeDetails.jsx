@@ -2,6 +2,8 @@
 import GetRecipeInfo from "../functions/GetRecipeInfo";
 import React from "react";
 import { useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 /*It will return details about each selected recipe*/
 const RecipeDetails = () => 
@@ -22,7 +24,7 @@ const RecipeDetails = () =>
             RecipeDetails.Ingredients.map((ingredient, index) => {
                 return (
                     <div className="ingredients xl:w-1/3 pr-4 pb-4">
-                        <div className="bg-teal-500 px-2 rounded-lg">
+                        <div className="bg-green-500 px-2 rounded-lg">
                             <p className="text-white font-bold" key={index}>{index+1}</p>
                         </div>
 
@@ -83,12 +85,21 @@ const RecipeDetails = () =>
 
             {/*Instructions containers*/}
             <div className="px-6">
-                <h1 className="text-3xl font-bold text-black text-center italic">How could I do it?</h1>
+                <div className="ingredients justify-center">
+                    {/*pr-4 --> Padding-right: 16px; mt-2 --> Margin-top: 8px*/}
+                    <div className="pr-4 mt-2">
+                        {/*text-2xl --> Font-size: 24px*/}
+                        <FontAwesomeIcon icon={faBook} className="text-green-500 text-2xl"/>
+                    </div>
+                    <div>
+                        {/*text-3xl --> Font-size: 30px*/}
+                        <h1 className="text-3xl font-bold text-black text-center italic">How could I do it?</h1>
+                    </div>
+                </div>
                 <br/>
                 <p>{RecipeDetails.StepByStep}
                 </p>
             </div>
-
         </section>
     )
 }
