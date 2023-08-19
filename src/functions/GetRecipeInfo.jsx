@@ -10,11 +10,11 @@ const GetRecipeInfo = (idRecipe) =>
     const [RecipeInfo, setInfo] = React.useState({
             Category: "",
             Area: "",
-            Ingredients: [],
+            Ingredients: new Array(),
             Img: "",
             Title: "",   
             Tags: "",
-            StepByStep:"",
+            //StepByStep:"",
     });
 
     React.useEffect(() => 
@@ -33,7 +33,12 @@ const GetRecipeInfo = (idRecipe) =>
                     let Ingredients = [];
 
                     GetIngredients(Ingredients, MealsResponse);
-                    
+
+                    const instructionsText = document.querySelector(".instructions-text");
+
+                    instructionsText.innerHTML = MealsResponse.strInstructions.replace(/\./g, '.<br/>');
+
+                  
                    
                     setInfo({
                         Category: MealsResponse.strCategory,
@@ -42,7 +47,7 @@ const GetRecipeInfo = (idRecipe) =>
                         Img: MealsResponse.strMealThumb,
                         Title: MealsResponse.strMeal,
                         Tags: MealsResponse.strTags,
-                        StepByStep: MealsResponse.strInstructions,
+                        //StepByStep: MealsResponse.strInstructions,
                     })
                 }
             }
