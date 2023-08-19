@@ -1,9 +1,14 @@
 
 import GetRecipeInfo from "../functions/GetRecipeInfo";
 import React from "react";
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faCutlery } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 /*It will return details about each selected recipe*/
 const RecipeDetails = () => 
@@ -16,6 +21,8 @@ const RecipeDetails = () =>
     
     //We get data about meals as tags, recipe tutorials from Youtube and a step-by-step report 
     const RecipeDetails = GetRecipeInfo(RecipeID);
+
+
 
 
     //Shows each ingredient with an identification number inside a teal background container. 
@@ -38,13 +45,20 @@ const RecipeDetails = () =>
     };
 
     return (
-        <section className="bg-white">
-            <div className="flex w-full items-center mx-auto animate__animated animate__zoomIn">
-            
+        <>
+        {/*Adding forks between RECIPES title*/}
+        <header className="p-6 justify-center">
+            <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pr-4"/>
+            <h1 className="text-3xl font-bold">RECIPES</h1>
+            <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pl-4"/>
+        </header>
+
+        <section className="bg-white animate__animated animate__fadeIn">
+            <div className="flex w-full items-center mx-auto">  
             {/*Div Img: Width:33%*/}
              <div className="w-1/3 relative">
                 <div className="p-6">
-                    <img src={RecipeDetails.Img} className="w-full rounded-lg"/>                
+                    <img src={RecipeDetails.Img} className="imgReceipe w-full rounded-lg"/>                
                 </div>
                 <div className="absolute bottom-0 mx-auto w-full p-6">
                     <div className="py-2 bg-black rounded-b-lg">
@@ -79,12 +93,12 @@ const RecipeDetails = () =>
 
             {/*pt-14 : padding-top:48px / pb-16: padding-bottom:64px*/}
             <div className="pt-14 pb-16">
-                <div className="bg-[url('./public/img/recipes-bg.jpg')] bg-cover bg-center bg-no-repeat bg-fixed h-96">
+                <div className="bg-[url('/img/recipes-bg.jpg')] bg-cover bg-center bg-no-repeat bg-fixed h-96">
                 </div>
             </div>
 
             {/*Instructions containers*/}
-            <div className="px-6">
+            <div className="px-6 pb-6">
                 <div className="ingredients justify-center">
                     {/*pr-4 --> Padding-right: 16px; mt-2 --> Margin-top: 8px*/}
                     <div className="pr-4 mt-2">
@@ -97,10 +111,19 @@ const RecipeDetails = () =>
                     </div>
                 </div>
                 <br/>
-                <p>{RecipeDetails.StepByStep}
-                </p>
+
+                <p className="instructions-text"></p>
+
+                {/*Arrow icon to return HomePage component*/}
+                <div className="pt-16">
+                    <Link 
+                        to = "/">
+                        <FontAwesomeIcon icon={faArrowCircleLeft} className="text-green-500 text-5xl"/>
+                    </Link>
+                </div>
             </div>
         </section>
+        </>
     )
 }
 
