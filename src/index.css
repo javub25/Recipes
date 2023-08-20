@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /*Mobile Custom for each Recipe*/
-.ingredients
+.ingredients, header
 {
     display:flex;
 }
@@ -14,4 +14,5 @@
         flex-direction: column;
     }
     .flex > div{width:100%}
+   
 }
