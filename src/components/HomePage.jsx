@@ -1,6 +1,5 @@
 import React from "react";
 import Recipes from './Recipes.jsx'
-import Countries from './Countries.jsx'
 import GetRecipe from '../functions/GetRecipe.jsx'
 import GetCountryList from '../functions/GetCountriesList.jsx';
 
@@ -20,38 +19,39 @@ const HomePage = () =>
 
     return (
         <>
-        <section className="text-center">
 
-        <select name="countries" className="country-list shadow-xl py-6 px-4 my-12 text-center border-solid border-grey border-2 appearance-none" onClick={getCountry}>
-          <option value=""> -- Choose your area -- </option>
-          {countriesData.map((country => {
-              return(
-                <Countries
-                  key = {country.strArea} 
-                  Country = {country.strArea}
-                />
-              )}
+        <section className="text-center">
+            <h1 className="text-2xl">Which area do you want to find out the recipes?</h1>
+            <select name="countries" className="text-md w-52 country-list shadow-xl py-4 px-2 mt-12 border-solid border-r-8 border-transparent" onClick={getCountry}> 
+            <option value="" className="text-left">Choose option</option>
+
+              {countriesData.map((country => <option key = {country.strArea} value={country.strArea} className="text-left">{country.strArea}</option>)
               )
-            )
-          }
-        </select>
+            }
+          </select>
         {
           recipesData!==null &&
+          <>
+              <div className="py-16">
+                <h3>Great! it seems we found <b>{recipesData.length} recipes</b>.</h3>
+              </div>
 
-          <div className="xl:w-4/5 grid sm:grid-cols-3 xl:grid-cols-5 gap-x-1 gap-y-8 content-center mx-auto">
-        {recipesData.map((recipe => 
-          {
-           return (
-              <Recipes 
-                  key = {recipe.idMeal}
-                  img = {recipe.strMealThumb}
-                  title = {recipe.strMeal}
-                  idrecipe = {recipe.idMeal}
-              />            
-            )
-          }
-        ))}
-        </div>
+              <div className="xl:w-4/5 grid sm:grid-cols-3 xl:grid-cols-5 gap-x-1 gap-y-8 content-center mx-auto">
+        
+                {recipesData.map((recipe => 
+                  {   
+                  return (
+                      <Recipes 
+                          key = {recipe.idMeal}
+                          img = {recipe.strMealThumb}
+                          title = {recipe.strMeal}
+                          idrecipe = {recipe.idMeal}
+                      />            
+                    )
+                  }
+                ))}
+              </div>
+          </>
         }
         </section>
         </>
