@@ -32,25 +32,29 @@ const HomePage = () =>
         {
           recipesData!==null &&
           <>
-              <div className="py-16">
-                <h3>Great! it seems we found <b>{recipesData.length} recipes</b>.</h3>
-              </div>
+            {recipesData.length > 0 &&
+              <>
+                <div className="py-16">
+                  <h3>Great! it seems we found <b>{recipesData.length} {recipesData.length === 1 ? "recipe" : "recipes"}</b>.</h3>
+                </div>
 
-              <div className="xl:w-4/5 grid sm:grid-cols-3 xl:grid-cols-5 gap-x-1 gap-y-8 content-center mx-auto">
-        
-                {recipesData.map((recipe => 
-                  {   
-                  return (
-                      <Recipes 
-                          key = {recipe.idMeal}
-                          img = {recipe.strMealThumb}
-                          title = {recipe.strMeal}
-                          idrecipe = {recipe.idMeal}
-                      />            
-                    )
-                  }
-                ))}
-              </div>
+                <div className="xl:w-4/5 grid sm:grid-cols-3 xl:grid-cols-5 gap-x-1 gap-y-8 content-center mx-auto">
+
+                  {recipesData.map((recipe => 
+                    {   
+                    return (
+                        <Recipes 
+                            key = {recipe.idMeal}
+                            img = {recipe.strMealThumb}
+                            title = {recipe.strMeal}
+                            idrecipe = {recipe.idMeal}
+                        />            
+                      )
+                    }
+                  ))}
+                </div>
+              </>
+            }
           </>
         }
         </section>
