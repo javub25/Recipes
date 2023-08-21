@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 /*Mobile Custom for each Recipe*/
-.ingredients, header
+.recipes
 {
     display:flex;
 }
 @media (max-width: 640px)
 {
-    .flex
+    .recipes
     {
         flex-direction: column;
     }
-    .flex > div{width:100%}
+    .recipes > div{width:100%}
    
 }
