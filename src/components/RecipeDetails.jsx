@@ -20,15 +20,13 @@ const RecipeDetails = () =>
     //We get data about meals as tags, recipe tutorials from Youtube and a step-by-step report 
     const RecipeDetails = GetRecipeInfo(RecipeID);
 
-
-
-
+    
     //Shows each ingredient with an identification number inside a teal background container. 
     const ShowIngredients = () => {
         return (   
             RecipeDetails.Ingredients.map((ingredient, index) => {
                 return (
-                    <div className="ingredients xl:w-1/3 pr-4 pb-4">
+                    <div className="flex xl:w-1/3 pr-4 pb-4">
                         <div className="bg-green-500 px-2 rounded-lg">
                             <p className="text-white font-bold" key={index}>{index+1}</p>
                         </div>
@@ -42,23 +40,19 @@ const RecipeDetails = () =>
         );
     };
 
-    
 
-    
-    
 
     return (
         <>
         {/*Adding forks between RECIPES title*/}
-        <header className="p-6 justify-center">
+        <header className="flex p-6 justify-center">
             <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pr-4"/>
             <h1 className="text-3xl font-bold">RECIPES</h1>
             <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pl-4"/>
-
         </header>
 
         <section className="bg-white animate__animated animate__fadeIn animate__slow">
-            <div className="flex w-full items-center mx-auto">  
+            <div className="recipes w-full items-center mx-auto">  
             {/*Div Img: Width:33%*/}
              <div className="w-1/3 relative">
                 <div className="p-6">
@@ -88,7 +82,7 @@ const RecipeDetails = () =>
                 <div className="bg-orange-400 p-4">
                     <h2 className="text-white font-bold">Ingredients</h2>
 
-                    <div className="ingredients flex-wrap items-center pt-4">
+                    <div className="flex flex-wrap items-center pt-4">
                         <ShowIngredients />
                     </div>
                 </div>                
@@ -101,33 +95,30 @@ const RecipeDetails = () =>
                 </div>
             </div>
 
+          
+            
             {/*Instructions containers*/}
             <div className="px-6 pb-6">
-                <div className="ingredients justify-center">
+                <div className="flex justify-center">
                     {/*pr-4 --> Padding-right: 16px; mt-2 --> Margin-top: 8px*/}
-                    <div className="pr-4 mt-2">
-                        {/*text-2xl --> Font-size: 24px*/}
-                        <FontAwesomeIcon icon={faBook} className="text-green-500 text-2xl"/>
-                    </div>
-                    <div>
-                        {/*text-3xl --> Font-size: 30px*/}
-                        <h1 className="text-3xl font-bold text-black text-center italic">How could I do it?</h1>
-                    </div>
+                    {/*text-2xl --> Font-size: 24px*/}
+                    <FontAwesomeIcon icon={faBook} className="text-green-500 text-2xl pr-4 mt-2"/>
+                    {/*text-3xl --> Font-size: 30px*/}
+                    <h1 className="text-3xl font-bold text-black text-center italic">How could I do it?</h1>
                 </div>
                 <br/>
 
                 <div className="p-6 border-solid border-green-400 border-2 border-l-8 rounded-md">
                     <p>{RecipeDetails.StepByStep}</p>
                 </div>
+            </div>
 
-
-                {/*Arrow icon to return HomePage component*/}
-                <div className="pt-16">
-                    <Link 
-                        to = "/">
-                        <FontAwesomeIcon icon={faArrowCircleLeft} className="text-green-500 text-5xl"/>
-                    </Link>
-                </div>
+            {/*Arrow icon to return HomePage component*/}
+            <div className="px-6 pt-16 pb-6">
+                <Link 
+                    to = "/">
+                    <FontAwesomeIcon icon={faArrowCircleLeft} className="text-green-500 text-5xl"/>
+                </Link>
             </div>
         </section>
         </>
