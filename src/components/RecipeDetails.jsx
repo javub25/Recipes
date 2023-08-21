@@ -8,8 +8,6 @@ import { faCutlery } from '@fortawesome/free-solid-svg-icons';
 import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
-
-
 /*It will return details about each selected recipe*/
 const RecipeDetails = () => 
 {
@@ -44,6 +42,11 @@ const RecipeDetails = () =>
         );
     };
 
+    
+
+    
+    
+
     return (
         <>
         {/*Adding forks between RECIPES title*/}
@@ -51,9 +54,10 @@ const RecipeDetails = () =>
             <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pr-4"/>
             <h1 className="text-3xl font-bold">RECIPES</h1>
             <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pl-4"/>
+
         </header>
 
-        <section className="bg-white animate__animated animate__fadeIn">
+        <section className="bg-white animate__animated animate__fadeIn animate__slow">
             <div className="flex w-full items-center mx-auto">  
             {/*Div Img: Width:33%*/}
              <div className="w-1/3 relative">
@@ -112,7 +116,10 @@ const RecipeDetails = () =>
                 </div>
                 <br/>
 
-                <p className="instructions-text"></p>
+                <div className="p-6 border-solid border-green-400 border-2 border-l-8 rounded-md">
+                    <p>{RecipeDetails.StepByStep}</p>
+                </div>
+
 
                 {/*Arrow icon to return HomePage component*/}
                 <div className="pt-16">
