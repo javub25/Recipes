@@ -4,39 +4,11 @@ import 'animate.css';
 import { Link } from 'react-router-dom';
 
 
-/*Object that stores the two pictures we have of the hearts.*/
-let heartsImg = {
-    notfavorite: "/img/outline_favorite_border_black_24dp.png",
-    favorite: "/img/outline_favorite_black_24dp.png"
-}
-
-//By default the user will not have indicated that he/she has any favorite recipe.
-let heart = heartsImg.notfavorite;
-
 
 const Recipes = (props) => 
 {
-    const [itemStatus, setitemStatus] = React.useState(false);
-
-
-
-    const FavouriteItem = () => 
-    {
-        setitemStatus((oldState) => !oldState)
-
-        //When you have clicked on the heart it will become a favorite recipe.
-        if(itemStatus) heart = heartsImg.favorite;
-        
-        //If it was in favorite will uncheck it.
-        else heart = heartsImg.notfavorite;
-    }
-
     return (
-        <div className="bg-white shadow-xl w-4/5 mx-auto animate__animated animate__zoomIn relative">
-            <div className="absolute right-3.5 my-8">
-                <img src={heart} onClick={FavouriteItem} alt="Favourite"/>
-        
-            </div>
+        <div className="bg-white shadow-xl w-4/5 mx-auto animate__animated animate__zoomIn">
             <div className="px-4 py-8">
                 <img src={props.img} className="w-full rounded-lg"/>                
             </div>
