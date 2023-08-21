@@ -14,7 +14,7 @@ const GetRecipeInfo = (idRecipe) =>
             Img: "",
             Title: "",   
             Tags: "",
-            //StepByStep:"",
+            StepByStep:"",
     });
 
     React.useEffect(() => 
@@ -34,12 +34,7 @@ const GetRecipeInfo = (idRecipe) =>
 
                     GetIngredients(Ingredients, MealsResponse);
 
-                    const instructionsText = document.querySelector(".instructions-text");
-
-                    instructionsText.innerHTML = MealsResponse.strInstructions.replace(/\./g, '.<br/>');
-
-                  
-                   
+                    
                     setInfo({
                         Category: MealsResponse.strCategory,
                         Area: MealsResponse.strArea,
@@ -47,7 +42,7 @@ const GetRecipeInfo = (idRecipe) =>
                         Img: MealsResponse.strMealThumb,
                         Title: MealsResponse.strMeal,
                         Tags: MealsResponse.strTags,
-                        //StepByStep: MealsResponse.strInstructions,
+                        StepByStep: MealsResponse.strInstructions,
                     })
                 }
             }
