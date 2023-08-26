@@ -6,6 +6,7 @@ import './index.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from "./components/HomePage.jsx";
 import RecipeDetails from "./components/RecipeDetails.jsx";
+import Favourites from "./components/Favourites.jsx";
 
 //Let's change body color
 const body = document.getElementsByTagName("body")[0];
@@ -19,14 +20,16 @@ all this will be inside the HomePage component.*/
 function App() {
   return (
     <>
-      <div className="App mx-auto px-6 py-8">
-        <Router>
-          <Routes>
-            <Route path="/" element={<HomePage/>} />
-            <Route path="/recipe-details" element={<RecipeDetails/>}/>         
-          </Routes>
-        </Router>
-      </div>
+        <div className="App mx-auto px-6 py-8">
+            <Router>
+              <Routes>
+                <Route path="/" element={<HomePage/>} />
+                <Route path="/recipe-details" element={<RecipeDetails/>}/>
+                <Route path="/favourites" element={<Favourites/>}/>          
+              </Routes>
+            </Router>
+        </div>
+
     </>
   )
 }
