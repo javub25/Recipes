@@ -24,6 +24,7 @@ const RecipeDetails = () =>
     const [favouriteStatus, setfavouriteStatus] = React.useState(false)
     const [FavouriteList, setFavouriteList] = React.useState(() => JSON.parse(localStorage.getItem("FavouriteList")) || [])
 
+    
 
     return (
         <>
