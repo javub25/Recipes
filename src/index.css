@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 /*Mobile Custom for each Recipe*/
-.recipes
+.recipes, .favourites
 {
     display:flex;
 }
 @media (max-width: 640px)
 {
-    .recipes
+    .recipes, .favourites
     {
         flex-direction: column;
     }
