@@ -2,6 +2,8 @@ import React from "react";
 import Recipes from './Recipes.jsx'
 import GetRecipe from '../functions/GetRecipe.jsx'
 import GetCountryList from '../functions/GetCountriesList.jsx';
+import { Link} from 'react-router-dom';
+
 
 const HomePage = () => 
 {
@@ -20,6 +22,12 @@ const HomePage = () =>
     return (
         <>
 
+        <header className="py-8 bg-teal-600">
+          <Link
+          to="/favourites">
+              <h2 className="text-white">Favourites</h2>
+          </Link>
+        </header>
         <section className="text-center">
             <h1 className="text-2xl">Which area do you want to find out the recipes?</h1>
             <select name="countries" className="text-md w-52 country-list shadow-xl py-4 px-2 mt-12 border-solid border-r-8 border-transparent" onClick={getCountry}> 
@@ -42,16 +50,16 @@ const HomePage = () =>
 
                   {recipesData.map((recipe => 
                     {   
-                    return (
-                        <Recipes 
-                            key = {recipe.idMeal}
-                            img = {recipe.strMealThumb}
-                            title = {recipe.strMeal}
-                            idrecipe = {recipe.idMeal}
-                        />            
-                      )
-                    }
-                  ))}
+                      return (
+                          <Recipes 
+                              key = {recipe.idMeal}
+                              img = {recipe.strMealThumb}
+                              title = {recipe.strMeal}
+                              idrecipe = {recipe.idMeal}
+                          />            
+                       )
+                      }
+                    ))}
                 </div>
               </>
             }
