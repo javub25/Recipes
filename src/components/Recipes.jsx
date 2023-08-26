@@ -3,8 +3,6 @@ import React from "react";
 import 'animate.css';
 import { Link } from 'react-router-dom';
 
-
-
 const Recipes = (props) => 
 {
     return (
