@@ -6,7 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { faCutlery } from '@fortawesome/free-solid-svg-icons';
 import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
-
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import Ingredients from "./Ingredients.jsx";
+import AddFavourite from './AddFavourite.jsx';
 
 /*It will return details about each selected recipe*/
 const RecipeDetails = () => 
@@ -16,30 +18,11 @@ const RecipeDetails = () =>
     const searchParams = new URLSearchParams(location.search);
     //Le's get RecipeID from URL from Recipes component
     const RecipeID = searchParams.get('recipeId');
-    
-    //We get data about meals as tags, recipe tutorials from Youtube and a step-by-step report 
+
     const RecipeDetails = GetRecipeInfo(RecipeID);
 
-    
-    //Shows each ingredient with an identification number inside a teal background container. 
-    const ShowIngredients = () => {
-        return (   
-            RecipeDetails.Ingredients.map((ingredient, index) => {
-                return (
-                    <div className="flex xl:w-1/3 pr-4 pb-4">
-                        <div className="bg-green-500 px-2 rounded-lg">
-                            <p className="text-white font-bold" key={index}>{index+1}</p>
-                        </div>
-
-                        <div className="pl-2">
-                            <p className="text-white font-bold" key={index}>{ingredient}</p>
-                        </div>
-                    </div>
-                )
-            })    
-        );
-    };
-
+    const [favouriteStatus, setfavouriteStatus] = React.useState(false)
+    const [FavouriteList, setFavouriteList] = React.useState(() => JSON.parse(localStorage.getItem("FavouriteList")) || [])
 
 
     return (
@@ -83,7 +66,7 @@ const RecipeDetails = () =>
                     <h2 className="text-white font-bold">Ingredients</h2>
 
                     <div className="flex flex-wrap items-center pt-4">
-                        <ShowIngredients />
+                        <Ingredients Recipe = {RecipeDetails}/>
                     </div>
                 </div>                
             </div>
@@ -95,8 +78,6 @@ const RecipeDetails = () =>
                 </div>
             </div>
 
-          
-            
             {/*Instructions containers*/}
             <div className="px-6 pb-6">
                 <div className="flex justify-center">
@@ -113,6 +94,21 @@ const RecipeDetails = () =>
                 </div>
             </div>
 
+            <div className="flex items-center px-6">
+                <FontAwesomeIcon icon={faHeart} className="text-3xl pr-4" 
+                    onClick={(e) => AddFavourite(
+                        {
+                            eventHandler: e, 
+                            Idrecipe: RecipeID,
+                            DataRecipe: RecipeDetails,
+                            Favourite: [favouriteStatus, setfavouriteStatus],
+                            FavouriteList: [FavouriteList, setFavouriteList],
+                        })
+                        }
+                    />
+                <h2>Add to Favourites</h2>
+            </div>
+
             {/*Arrow icon to return HomePage component*/}
             <div className="px-6 pt-16 pb-6">
                 <Link 
@@ -124,5 +120,6 @@ const RecipeDetails = () =>
         </>
     )
 }
+
 
 export default RecipeDetails;
