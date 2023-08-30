@@ -14,5 +14,8 @@
         flex-direction: column;
     }
     .recipes > div{width:100%}
-   
+    .pr-Mob
+    {
+        padding-right:0;
+    }
 }
