@@ -27,7 +27,7 @@ const ShowFavourites = () =>
                     {
                         return (
                             <div className="favourites items-center justify-center p-8">
-                                <div className="md:pr-6">
+                                <div className="pr-6 pr-Mob">
                                     <img src={favourite.photo} className="w-28"/>
                                 </div>
                                 <div className="py-4">
