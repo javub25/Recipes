@@ -4,9 +4,9 @@ import viteLogo from '/vite.svg'
 import React from "react";
 import './index.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from "./components/HomePage.jsx";
-import RecipeDetails from "./components/RecipeDetails.jsx";
-import Favourites from "./components/Favourites.jsx";
+import HomePage from "@features/HomePage/HomePage.jsx"
+import RecipeDetails from "@features/Recipes/RecipeDetails.jsx";
+import Favourites from "@features/Favourites/ShowFavourites.jsx";
 
 //Let's change body color
 const body = document.getElementsByTagName("body")[0];
