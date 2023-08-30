@@ -74,7 +74,7 @@ const RecipeDetails = () =>
 
             {/*pt-14 : padding-top:48px / pb-16: padding-bottom:64px*/}
             <div className="pt-14 pb-16">
-                <div className="bg-[url(./src/assets/img/recipes-bg.jpg)] bg-cover bg-center bg-no-repeat bg-fixed h-96">
+                <div className="bg-[url(../src/assets/img/recipes-bg.jpg)] bg-cover bg-center bg-no-repeat bg-fixed h-96">
                 </div>
             </div>
 
