@@ -16,13 +16,13 @@ const ShowFavourites = () =>
 
     const [removedFavorites, setRemovedFavorites] = React.useState(JSON.parse(localStorage.getItem("FavouriteList")))
     
-
+   
     return (
         <>        
         <h1 className="text-center">Favourite Recipes</h1>
         { Favourite.length > 0 ? (
             <>
-            <div className="flex w/1-3 items-center justify-center flex-wrap">
+            <div className="w-full flex items-center justify-center flex-wrap">
             {Favourite.map((favourite => 
                     {
                         return (
