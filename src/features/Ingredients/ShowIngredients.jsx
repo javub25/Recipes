@@ -1,14 +1,15 @@
 const ShowIngredients = ({Recipe}) => {
     return (   
-        Recipe.Ingredients.map((ingredient, index) => {
-            return (
-                <div className="flex xl:w-1/3 pr-4 pb-4">
-                    <div className="bg-green-500 px-2 rounded-lg">
-                        <p className="text-white font-bold" key={index}>{index+1}</p>
-                    </div>
-
-                    <div className="pl-2">
-                        <p className="text-white font-bold" key={index}>{ingredient}</p>
+        Recipe.Ingredients.map((ingredient) => {
+            return(
+                <div className="ingredients flex pb-10 items-center">
+                    <div className="flex items-center px-4">
+                        <div className="ImgSpace">
+                            <img src={`https://www.themealdb.com/images/ingredients/${ingredient.name}-Small.png`}/>
+                        </div>
+                        <div>
+                            <p className="text-center">{ingredient.name}<br/>{ingredient.measures}</p>
+                        </div>
                     </div>
                 </div>
             )
