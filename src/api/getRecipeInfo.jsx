@@ -30,15 +30,15 @@ const getRecipeInfo = (idRecipe) =>
                 {
                     const MealsResponse = response.data.meals[0];
                     //Save the main ingredients of the selected receipe
-                    let Ingredients = [];
+                    const IngredientsData = []
 
-                    getIngredients(Ingredients, MealsResponse);
+                    getIngredients(IngredientsData, MealsResponse);
 
                     
                     setInfo({
                         Category: MealsResponse.strCategory,
                         Area: MealsResponse.strArea,
-                        Ingredients: Ingredients, 
+                        Ingredients: IngredientsData, 
                         Img: MealsResponse.strMealThumb,
                         Title: MealsResponse.strMeal,
                         Tags: MealsResponse.strTags,
