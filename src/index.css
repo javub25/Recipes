@@ -7,6 +7,10 @@
 {
     display:flex;
 }
+.ImgSpace
+{
+    padding-right:1rem;
+}
 @media (max-width: 640px)
 {
     .recipes, .favourites
@@ -18,11 +22,35 @@
     {
         padding-right:0;
     }
+   
 }
+
+@media (max-width:480px)
+{
+    .ingredients > div
+    {
+        flex-direction: column;
+    }
+    .ingredients
+    {
+        padding-left:0;
+        padding-right:0;
+    }
+    .ImgSpace
+    {
+        padding:0 0 0.75rem 0;
+    }
+}
+
+
 
 @media (min-width:992px){
     .favourites
     {
         width:33%;
+    }
+    .ingredients
+    {
+        width:25%;
     }
 }
