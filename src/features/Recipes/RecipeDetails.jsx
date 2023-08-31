@@ -37,7 +37,7 @@ const RecipeDetails = () =>
         <section className="bg-white animate__animated animate__fadeIn animate__slow">
             <div className="recipes w-full items-center mx-auto">  
             {/*Div Img: Width:33%*/}
-             <div className="w-1/3 relative">
+                <div className="w-1/3 relative">
                 <div className="p-6">
                     <img src={RecipeDetails.Img} className="imgReceipe w-full rounded-lg"/>                
                 </div>
@@ -46,37 +46,40 @@ const RecipeDetails = () =>
                         <h1 className="text-center text-white font-bold text-lg">{RecipeDetails.Title}</h1>
                     </div>
                 </div>
-            </div>
-            {/*Div Info: Width:66%*/}
-            <div className="w-2/3 px-6">
-                <h2><b>Area:</b> {RecipeDetails.Area}</h2>
-
-                <h2><b>Category:</b> {RecipeDetails.Category}</h2>
-                {/*Comment JSX: This only appear when there are tags*/}
-                {RecipeDetails.Tags !==null &&
-                <div className="w-48 p-2 bg-orange-400 my-5">
-                    <h2 className="text-center text-white font-bold text-slate-600 break-words text-sm">{RecipeDetails.Tags}</h2>
                 </div>
-                }
-                {/*When there are no labels we will add a line break*/}
-                {RecipeDetails.Tags === null && <br/>} 
+            {/*Div Info: Width:66%*/}
+                <div className="w-2/3 px-6">
+                    <h2><b>Area:</b> {RecipeDetails.Area}</h2>
+                    
+                    <h2><b>Category:</b> {RecipeDetails.Category}</h2>
+                    {/*Comment JSX: This only appear when there are tags*/}
+                    {RecipeDetails.Tags !==null && RecipeDetails.Tags !=="" ?
+                    <div className="w-48 p-2 bg-orange-400 my-5">
+                        <h2 className="text-center text-white font-bold text-slate-600 break-words text-sm">{RecipeDetails.Tags}</h2>
+                    </div>
+                    : ""
+                    }   
+                </div>
+            </div>
 
-                {/*Render the ShowIngredients component */}
-                <div className="bg-orange-400 p-4">
-                    <h2 className="text-white font-bold">Ingredients</h2>
+             {/*Render the ShowIngredients component */}
+             <div className="pt-8 p-4">
+                    <h2 className="text-3xl font-bold text-black text-center italic">Ingredients</h2>
 
-                    <div className="flex flex-wrap items-center pt-4">
+                    <div className="flex flex-wrap items-center justify-center pt-16">
                         <Ingredients Recipe = {RecipeDetails}/>
                     </div>
-                </div>                
-            </div>
-            </div>
+                </div> 
+
+            
 
             {/*pt-14 : padding-top:48px / pb-16: padding-bottom:64px*/}
             <div className="pt-14 pb-16">
                 <div className="bg-[url(../src/assets/img/recipes-bg.jpg)] bg-cover bg-center bg-no-repeat bg-fixed h-96">
                 </div>
             </div>
+
+
 
             {/*Instructions containers*/}
             <div className="px-6 pb-6">
