@@ -28,13 +28,14 @@ const RecipeDetails = () =>
     return (
         <>
         {/*Adding forks between RECIPES title*/}
-        <header className="flex p-6 justify-center">
-            <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pr-4"/>
-            <h1 className="text-3xl font-bold">RECIPES</h1>
-            <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pl-4"/>
-        </header>
+        <section className="animate__animated animate__fadeIn animate__slow mt-24 px-6">
+            <div className="bg-white">
+            <div className="flex p-6 pt-8 justify-center">
+                <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pr-4"/>
+                <h1 className="text-3xl font-bold">RECIPES</h1>
+                <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pl-4"/>
+            </div>
 
-        <section className="bg-white animate__animated animate__fadeIn animate__slow">
             <div className="recipes w-full items-center mx-auto">  
             {/*Div Img: Width:33%*/}
                 <div className="w-1/3 relative">
@@ -119,6 +120,9 @@ const RecipeDetails = () =>
                     <FontAwesomeIcon icon={faArrowCircleLeft} className="text-green-500 text-5xl"/>
                 </Link>
             </div>
+
+            </div>
+            
         </section>
         </>
     )
