@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from "@features/HomePage/HomePage.jsx"
 import RecipeDetails from "@features/Recipes/RecipeDetails.jsx";
 import Favourites from "@features/Favourites/ShowFavourites.jsx";
+import Header from "@features/Header/Header.jsx"
+
 
 //Let's change body color
 const body = document.getElementsByTagName("body")[0];
@@ -18,9 +20,11 @@ all this will be inside the HomePage component.*/
 
 /*The second component called RecipeDetails will display the information of the recipe chosen by the user.*/
 function App() {
+
   return (
     <>
-        <div className="App mx-auto px-6 py-8">
+        <div className="App mx-auto">
+            <Header />
             <Router>
               <Routes>
                 <Route path="/" element={<HomePage/>} />
