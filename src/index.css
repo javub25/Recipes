@@ -11,6 +11,15 @@
 {
     padding-right:1rem;
 }
+
+.NavDesk
+{
+    display:flex;
+}
+.NavMob
+{
+    display:none;
+}
 @media (max-width: 640px)
 {
     .recipes, .favourites
@@ -22,7 +31,6 @@
     {
         padding-right:0;
     }
-   
 }
 
 @media (max-width:480px)
@@ -39,6 +47,18 @@
     .ImgSpace
     {
         padding:0 0 0.75rem 0;
+    }
+    .NavMob
+    {
+        display:block;
+    }
+    .nav-content > div > *
+    {
+        padding:0.5rem 0;
+    }
+    .NavDesk
+    {
+        display:none;
     }
 }
 
