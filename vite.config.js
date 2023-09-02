@@ -15,6 +15,10 @@ export default defineConfig({
         find: '@features',
         replacement: path.resolve(path.join(__dirname, '/src/features')),
       },
+      {
+        find: '@tests',
+        replacement: path.resolve(path.join(__dirname, '/src/tests')),
+      }
     ]
   }
 });
