@@ -21,14 +21,7 @@ const HomePage = () =>
 
     return (
         <>
-
-        <header className="py-8 bg-teal-600">
-          <Link
-          to="/favourites">
-              <h2 className="text-white">Favourites</h2>
-          </Link>
-        </header>
-        <section className="text-center">
+        <section className="text-center mt-24 px-4">
             <h1 className="text-2xl">Which area do you want to find out the recipes?</h1>
             <select name="countries" className="text-md w-52 country-list shadow-xl py-4 px-2 mt-12 border-solid border-r-8 border-transparent" onClick={getCountry}> 
             <option value="" className="text-left">Choose option</option>
