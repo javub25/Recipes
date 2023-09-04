@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars} from '@fortawesome/free-solid-svg-icons';
 
+
 import React from 'react'
 import ShowNavBar from '@tests/ShowNavBar.jsx'
 import NavBarItems from '@features/NavBar/NavBarItems.jsx';
@@ -11,10 +12,10 @@ const NavBar = () =>
   
     return (
         <>
-            <nav className="w-full NavDesk items-center z-10 px-4 fixed top-0 justify-between bg-orange-400 py-4">                
+            <nav className="w-full NavDesk z-10 px-4 fixed top-0 bg-orange-400 py-4 animate__animated animate__fadeInDown">                
                 <NavBarItems />
             </nav>
-            <nav className="NavMob z-10 top-0 fixed w-full bg-orange-400 py-4">
+            <nav className="NavMob z-10 top-0 fixed w-full bg-orange-400 py-4 animate__animated animate__fadeInDown">
                 <FontAwesomeIcon icon={faBars} className="text-white text-2xl pl-4" onClick={() => ShowNavBar(ShowNav, setShowNav)}/>  
                 
                     <div className="nav-content hidden relative w-full bg-orange-400 animate__animated">
