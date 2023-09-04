@@ -12,7 +12,7 @@
     padding-right:1rem;
 }
 
-.NavDesk
+.NavDesk, .nav-content-list
 {
     display:flex;
 }
@@ -48,14 +48,19 @@
     {
         padding:0 0 0.75rem 0;
     }
-    .NavMob
+    .NavMob, .nav-content-list
     {
         display:block;
     }
-    .nav-content > div > *
+    .nav-content-list:last-child
+    {
+        padding-bottom: 1rem;
+    }
+    .nav-content-list > li
     {
         padding:0.5rem 0;
     }
+    
     .NavDesk
     {
         display:none;
