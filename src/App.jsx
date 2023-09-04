@@ -3,12 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import React from "react";
 import './index.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Header from "@features/Header/Header.jsx"
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Areas from '@features/Areas/Areas.jsx';
 import HomePage from "@features/HomePage/HomePage.jsx"
 import RecipeDetails from "@features/Recipes/RecipeDetails.jsx";
 import Favourites from "@features/Favourites/ShowFavourites.jsx";
-import Header from "@features/Header/Header.jsx"
-
 
 //Let's change body color
 const body = document.getElementsByTagName("body")[0];
@@ -24,14 +25,15 @@ function App() {
   return (
     <>
         <div className="App mx-auto">
-            <Header />
             <Router>
-              <Routes>
-                <Route path="/" element={<HomePage/>} />
-                <Route path="/recipe-details" element={<RecipeDetails/>}/>
-                <Route path="/favourites" element={<Favourites/>}/>          
+                <Header />
+                  <Routes>
+                    <Route path="/" element={<HomePage/>}/>
+                    <Route path="/areas" element={<Areas/>}/>
+                    <Route path="/recipe-details" element={<RecipeDetails/>}/>
+                    <Route path="/favourites" element={<Favourites/>}/>
               </Routes>
-            </Router>
+          </Router>
         </div>
 
     </>
