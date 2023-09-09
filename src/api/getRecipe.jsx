@@ -1,35 +1,12 @@
-import axios from './axios';
 import React from "react";
+import getUseffect from '@api/getUseffect.jsx';
 
-//We have a function that will display the recipes depending on the selected country. 
-const GetRecipe = (selectedCountry) => 
+//We have a function that will display the recipes depending on the selected country or category.
+const GetRecipe = (queryLetter, queryValue) => 
 { 
   const [recipesData, setRecipesData] = React.useState([]);
 
-  //It will run every time selectedCountry changes
-  React.useEffect(() => 
-  {  
-    const fetchData = async () => 
-    {
-      
-      const response = await axios.get(`filter.php?a=${selectedCountry}`);
-
-      try
-      {
-        if(response.status === 200)
-        {
-          setRecipesData(response.data.meals);
-        }
-      }
-      catch(error){
-        throw new Error(error.message);
-      }
-    };
-
-    fetchData();
-    
-  },[selectedCountry])
-
+  getUseffect(`filter.php?${queryLetter}=${queryValue}`, setRecipesData, "meals", queryValue);
 
   return recipesData;
 }
