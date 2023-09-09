@@ -15,12 +15,12 @@ const ShowNavBar = (ShowNav, setShowNav) =>
         },1500)
         navList.classList.add("animate__fadeOutLeft");
         navList.classList.remove("animate__fadeInLeft");
-        section.classList.replace("mt-80", "mt-24")
+        section.classList.replace("mobile:mt-96", "mobile:mt-20")
     }
     else
     {
         clearTimeout(time);
-        section.classList.replace("mt-24", "mt-80")
+        section.classList.replace("mobile:mt-20", "mobile:mt-96")
         navList.classList.add("block", "animate__fadeInLeft");
         navList.classList.remove("hidden", "animate__fadeOutLeft")
     }
