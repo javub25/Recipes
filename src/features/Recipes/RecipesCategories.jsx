@@ -2,7 +2,6 @@
 import getRecipe from '@api/getRecipe.jsx';
 import { useLocation } from 'react-router-dom';
 import Recipes from '@features/Recipes/Recipes.jsx';
-import categoriesBg from '@assets/categories-bg-2.jpg';
  
 const RecipesCategories = () => 
 {
