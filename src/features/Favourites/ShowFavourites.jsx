@@ -19,7 +19,7 @@ const ShowFavourites = () =>
    
     return (
         <>
-            <section className="mt-24 px-4">
+            <section className="mt-40 mobile:mt-20 px-4">
                 <h1 className="text-center">Favourite Recipes</h1>
                 { Favourite.length > 0 ? (
                     <>
