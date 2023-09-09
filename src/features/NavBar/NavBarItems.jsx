@@ -2,12 +2,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome} from '@fortawesome/free-solid-svg-icons';
 import React from "react";
 import {Link} from 'react-router-dom';
+import TastyWorldLogo from '@assets/TastyWorldLogo.png'
 
 const NavBarItems = () => 
 {
     return (
         <>
-            <ul className="nav-content-list w-full justify-between items-center">
+            <ul className="nav-content-list w-full justify-evenly items-center">
+                <li>
+                    <img src={TastyWorldLogo} alt="Tasty World Logo" className="w-20 mobile:mx-auto"/>
+                </li>
                 <li>
                     <Link to="/">
                         <FontAwesomeIcon icon={faHome} className="text-white text-2xl"/>
