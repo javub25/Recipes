@@ -1,3 +1,6 @@
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css";
+
 const addFavourite = (props) => 
     {
         props.Favourite[1]((oldState) => !oldState)
@@ -19,10 +22,19 @@ const addFavourite = (props) =>
                 localStorage.setItem("FavouriteList", JSON.stringify([...props.FavouriteList[0], FavouriteData]))
             }
             else {
-                alert("This Recipe has been added previously")
+                Toastify({
+                    text: "This Recipe has been added previously",
+                    gravity: "top",
+                    position: "center",
+                    className: "h-12 p-8",
+                    style: {
+                        background: "rgb(74 222 128)",
+                    }
+                  }).showToast();
             }
           }  
         else {
+            
             props.eventHandler.target.classList.remove("text-red-600");
         }
     }
