@@ -1,32 +1,12 @@
-import axios from './axios';
 import React from "react";
+import getUseffect from "@api/getUseffect.jsx";
 
 const getCountries = () => 
 { 
   const [country, setcountry] = React.useState([]);
+  
+  getUseffect("/list.php?a=list", setcountry, "meals", null);
 
-  React.useEffect(() => 
-  {
-    
-    const fetchData = async () => 
-    {
-      const response = await axios.get(`/list.php?a=list`);
-
-      try
-      {
-        if(response.status === 200)
-        {
-            setcountry(response.data.meals);
-        }
-      }
-      catch(error){
-        throw new Error(error.message);
-      }
-    };
-
-    fetchData();
-    
-  },[])
   return country;
 }
 
