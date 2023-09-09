@@ -10,6 +10,8 @@ import Areas from '@features/Areas/Areas.jsx';
 import HomePage from "@features/HomePage/HomePage.jsx"
 import RecipeDetails from "@features/Recipes/RecipeDetails.jsx";
 import Favourites from "@features/Favourites/ShowFavourites.jsx";
+import Categories from '@features/Categories/Categories.jsx';
+import RecipesCategories from '@features/Recipes/RecipesCategories.jsx';
 
 //Let's change body color
 const body = document.getElementsByTagName("body")[0];
@@ -30,6 +32,8 @@ function App() {
                   <Routes>
                     <Route path="/" element={<HomePage/>}/>
                     <Route path="/areas" element={<Areas/>}/>
+                    <Route path="/categories" element={<Categories/>}/>
+                    <Route path="/recipe-categories" element={<RecipesCategories/>}/>
                     <Route path="/recipe-details" element={<RecipeDetails/>}/>
                     <Route path="/favourites" element={<Favourites/>}/>
               </Routes>
