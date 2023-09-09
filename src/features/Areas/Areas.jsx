@@ -15,11 +15,11 @@ const Areas = () =>
       setSelectedCountry(event.target.value);
     };
     // Once the country area has been chosen, the recipes are displayed.
-    const recipesData = GetRecipe(selectedCountry);
+    const recipesData = GetRecipe("a", selectedCountry);
 
     return (
         <>
-        <section className="text-center mt-24 px-4">
+        <section className="text-center mt-40 mobile:mt-20 px-4">
             <h1 className="text-2xl">Which area do you want to find out the recipes?</h1>
             <select name="countries" className="text-md w-52 country-list shadow-xl py-4 px-2 mt-12 border-solid border-r-8 border-transparent" onClick={getCountry}> 
             <option value="" className="text-left">Choose option</option>
