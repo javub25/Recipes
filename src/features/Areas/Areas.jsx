@@ -1,8 +1,8 @@
-import Recipes from '@features/Recipes/Recipes.jsx'
 import GetRecipe from '@api/getRecipe.jsx'
 import GetCountryList from '@api/getCountries.jsx';
 import React from 'react';
-
+import RecipePages from "@features/Recipes/RecipesPages.jsx";
+ 
 const Areas = () => 
 {
     const countriesData = GetCountryList();
@@ -16,7 +16,10 @@ const Areas = () =>
     };
     // Once the country area has been chosen, the recipes are displayed.
     const recipesData = GetRecipe("a", selectedCountry);
+    const [page, setpage] = React.useState(0);
+    const lengthRecipes = recipesData.Pages.length - 1;
 
+    console.log(recipesData.Pages)
     return (
         <>
         <section className="text-center mt-40 mobile:mt-20 px-4">
@@ -29,29 +32,18 @@ const Areas = () =>
             }
           </select>
         {
-          recipesData!==null &&
+          recipesData.Pages!==null &&
           <>
-            {recipesData.length > 0 &&
+            {
+            recipesData.Total > 0 &&
+
               <>
                 <div className="py-16">
-                  <h3>Great! it seems we found <b>{recipesData.length} {recipesData.length === 1 ? "recipe" : "recipes"}</b>.</h3>
+                  <h3>Great! it seems we found <b>{recipesData.Total} {recipesData.Total === 1 ? "recipe" : "recipes"}</b>.</h3>
                 </div>
-
-                <div className="xl:w-4/5 grid sm:grid-cols-3 xl:grid-cols-5 gap-x-1 gap-y-8 content-center mx-auto">
-
-                  {recipesData.map((recipe => 
-                    {   
-                      return (
-                          <Recipes 
-                              key = {recipe.idMeal}
-                              img = {recipe.strMealThumb}
-                              title = {recipe.strMeal}
-                              idrecipe = {recipe.idMeal}
-                          />            
-                       )
-                      }
-                    ))}
-                </div>
+                {
+                  RecipePages(recipesData, page, setpage, lengthRecipes)
+                }
               </>
             }
           </>
