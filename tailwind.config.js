@@ -8,6 +8,7 @@ export default {
   theme: {
     screens: {
       'mobile': {'max': '480px'},
+      'tablets': {'max': '894px'},
       ...defaultTheme.screens,
     },
     extend: {},
