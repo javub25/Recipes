@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import React from "react";
 import './index.css'
 
@@ -12,6 +9,8 @@ import RecipeDetails from "@features/Recipes/RecipeDetails.jsx";
 import Favourites from "@features/Favourites/ShowFavourites.jsx";
 import Categories from '@features/Categories/Categories.jsx';
 import RecipesCategories from '@features/Recipes/RecipesCategories.jsx';
+import NoMatch from '@pages/NoMatch.jsx';
+import Footer from "@features/Footer/Footer.jsx";
 
 //Let's change body color
 const body = document.getElementsByTagName("body")[0];
@@ -29,15 +28,17 @@ function App() {
         <div className="App mx-auto">
             <Router>
                 <Header />
-                  <Routes>
-                    <Route path="/" element={<HomePage/>}/>
-                    <Route path="/areas" element={<Areas/>}/>
-                    <Route path="/categories" element={<Categories/>}/>
-                    <Route path="/recipe-categories" element={<RecipesCategories/>}/>
-                    <Route path="/recipe-details" element={<RecipeDetails/>}/>
-                    <Route path="/favourites" element={<Favourites/>}/>
-              </Routes>
-          </Router>
+                    <Routes>
+                        <Route path="/" element={<HomePage/>}/>
+                        <Route path="/areas" element={<Areas/>}/>
+                        <Route path="/categories" element={<Categories/>}/>
+                        <Route path="/recipe-categories" element={<RecipesCategories/>}/>
+                        <Route path="/recipe-details" element={<RecipeDetails/>}/>
+                        <Route path="/favourites" element={<Favourites/>}/>
+                        <Route path="*" element={<NoMatch/>}/>
+                    </Routes>
+                <Footer />
+            </Router>
         </div>
 
     </>
