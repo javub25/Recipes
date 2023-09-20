@@ -22,7 +22,11 @@ export default defineConfig({
       {
         find: '@assets',
         replacement: path.resolve(path.join(__dirname, '/src/assets/img')),
-      }
+      },
+      {
+        find: '@pages',
+        replacement: path.resolve(path.join(__dirname, '/src/pages')),
+      },
     ]
   }
 });
