@@ -1,7 +1,7 @@
 
 import { Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faStar } from '@fortawesome/free-solid-svg-icons';
 import deleteFavourite from './deleteFavourite.jsx'
 import React from "react";
 
@@ -16,11 +16,13 @@ const ShowFavourites = () =>
 
     const [removedFavorites, setRemovedFavorites] = React.useState(JSON.parse(localStorage.getItem("FavouriteList")))
     
-   
     return (
         <>
-            <section className="mt-40 mobile:mt-20 px-4">
-                <h1 className="text-center">Favourite Recipes</h1>
+            <section className="mt-40 mobile:mt-20 px-4 mb-40">
+                <div className="flex items-center justify-center">
+                    <h1 className="text-center text-2xl">Favourite Recipes</h1>
+                    <FontAwesomeIcon icon={faStar} className="bottom pl-4 text-green-500 text-2xl"/>
+                </div>
                 { Favourite.length > 0 ? (
                     <>
                     <div className="w-full flex items-center justify-center flex-wrap">
