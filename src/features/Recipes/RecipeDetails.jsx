@@ -28,7 +28,7 @@ const RecipeDetails = () =>
     return (
         <>
         {/*Adding forks between RECIPES title*/}
-        <section className="animate__animated animate__fadeIn animate__slow mt-40 mobile:mt-20 px-6 w-4/5 mobile:w-full mx-auto">
+        <section className="animate__animated animate__fadeIn animate__slow mt-40 mobile:mt-20 px-6 w-4/5 mobile:w-full mx-auto mb-40">
             <div className="bg-white">
                 <div className="flex p-6 pt-8 justify-center">
                     <FontAwesomeIcon icon={faCutlery} className="text-green-500 text-3xl pr-4"/>
@@ -71,8 +71,6 @@ const RecipeDetails = () =>
                         <Ingredients Recipe = {RecipeDetails}/>
                     </div>
                 </div> 
-
-            
 
                 {/*pt-14 : padding-top:48px / pb-16: padding-bottom:64px*/}
                 <div className="pt-14 pb-16">
