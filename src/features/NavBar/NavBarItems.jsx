@@ -19,17 +19,17 @@ const NavBarItems = () =>
                 </li>
                 <li>
                     <Link to="/categories">
-                        <h2 className="text-1xl text-white">CATEGORIES</h2>
+                        <h2 className="text-lg text-white">CATEGORIES</h2>
                     </Link>
                 </li>
                 <li>
                     <Link to="/areas">
-                        <h2 className="text-1xl text-white">AREAS</h2>
+                        <h2 className="text-lg text-white">AREAS</h2>
                     </Link>
                 </li>
                 <li>
                     <Link to="/favourites">
-                        <h2 className="text-1xl text-white">FAVOURITES</h2>   
+                        <h2 className="text-lg text-white">FAVOURITES</h2>   
                     </Link>
                 </li>
             </ul>
