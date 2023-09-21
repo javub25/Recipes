@@ -20,8 +20,8 @@ const RecipesCategories = () =>
 
 
     return (
-        <section className="mt-40 mobile:mt-20 px-4">
-            <h1 className="text-center text-2xl">{categoryName}</h1>
+        <section className="mt-40 mobile:mt-20 px-4 mb-40">
+            <h1 className="text-center text-2xl text-black">{categoryName}</h1>
             {
                 RecipePages(recipesData, page, setpage, lengthRecipes)
             }
